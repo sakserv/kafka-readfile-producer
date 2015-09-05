@@ -1,0 +1,20 @@
+{"customerid":"1000","item":"fuzzy slippers","count":"1","dt":"2014-01-10"}
+{"customerid":"1000","item":"slippers","count":"2","dt":"2014-01-11"}
+{"customerid":"1003","item":"fuzzy","count":"3","dt":"2014-01-12"}
+{"customerid":"1006","item":"fuzzy navel","count":"66","dt":"2014-01-13"}
+{"customerid":"1002","item":"fuzzy bear","count":"433","dt":"2014-01-14"}
+{"customerid":"1002","item":"slippers","count":"12","dt":"2014-01-14"}
+{"customerid":"1080","item":"black slippers","count":"9","dt":"2014-01-14"}
+{"customerid":"1005","item":"yellow slippers","count":"232","dt":"2014-01-10"}
+{"customerid":"1006","item":"fuzzy wuzzy","count":"112","dt":"2014-01-10"}
+{"customerid":"1009","item":"green slippers","count":"3","dt":"2014-01-15"}
+{"customerid":"1007","item":"tan slippers","count":"4","dt":"2014-01-16"}
+{"customerid":"1008","item":"fuzzy slippers","count":"7","dt":"2014-01-17"}
+{"customerid":"1006","item":"blue slippers","count":"2","dt":"2014-01-17"}
+{"customerid":"1002","item":"fuzzy slippers","count":"1","dt":"2014-01-18"}
+{"customerid":"1000","item":"white slippers","count":"1","dt":"2014-01-19"}
+{"customerid":"1000","item":"fuzzy slippers","count":"988","dt":"2014-01-20"}
+{"customerid":"1004","item":"yellow slippers","count":"112312","dt":"2014-01-20"}
+{"customerid":"1004","item":"blue slippers","count":"14542","dt":"2014-01-20"}
+{"customerid":"1010","item":"tan slippers","count":"765","dt":"2014-01-20"}
+{"customerid":"1011","item":"purple slippers","count":"1","dt":"2014-01-31"}

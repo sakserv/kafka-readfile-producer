@@ -34,7 +34,4 @@ import java.lang.String;public class ConfigVars {
     public static final String KAFKA_TEST_BROKER_ID_KEY = "kafka.test.broker.id";
     public static final String KAFKA_TEST_TEMP_DIR_KEY = "kafka.test.temp.dir";
 
-    public String toString() {
-        return "ConfigVars";
-    }
 }

@@ -102,6 +102,7 @@ public class KafkaReadfileProducer {
             while (line != null) {
                 KeyedMessage<String, String> data = new KeyedMessage<String, String>(getTopic(), null, line);
                 producer.send(data);
+                System.out.println(line);
                 Thread.sleep(500l);
                 line = br.readLine();
             }
