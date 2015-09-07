@@ -101,10 +101,11 @@
         <dependency>
             <groupId>com.github.sakserv</groupId>
             <artifactId>property-parser</artifactId>
-            <version>0.0.1</version>
+            <version>${property-parser.version}</version>
         </dependency>
 
     </dependencies>
+    
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
         <testSourceDirectory>test/main/java</testSourceDirectory>
@@ -112,6 +113,9 @@
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>test/main/resources</directory>
             </resource>
         </resources>
 

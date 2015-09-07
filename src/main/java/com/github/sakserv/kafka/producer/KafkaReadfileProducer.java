@@ -103,7 +103,7 @@ public class KafkaReadfileProducer {
                 KeyedMessage<String, String> data = new KeyedMessage<String, String>(getTopic(), null, line);
                 producer.send(data);
                 System.out.println(line);
-                Thread.sleep(500l);
+                Thread.sleep(100l);
                 line = br.readLine();
             }
         } catch (IOException e) {
