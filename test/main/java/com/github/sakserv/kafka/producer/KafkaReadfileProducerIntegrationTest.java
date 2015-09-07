@@ -87,7 +87,7 @@ public class KafkaReadfileProducerIntegrationTest {
         KafkaReadfileProducer kafkaReadfileProducer = new KafkaReadfileProducer.Builder()
                 .setKafkaHostname(propertyParser.getProperty(ConfigVars.KAFKA_HOSTNAME_KEY))
                 .setKafkaPort(Integer.parseInt(propertyParser.getProperty(ConfigVars.KAFKA_PORT_KEY)))
-                .setTopic(propertyParser.getProperty(ConfigVars.KAFKA_TEST_TOPIC_KEY))
+                .setTopic(propertyParser.getProperty(ConfigVars.KAFKA_TOPIC_KEY))
                 .setInputFileName(inputFile)
                 .build();
 
@@ -99,7 +99,7 @@ public class KafkaReadfileProducerIntegrationTest {
         KafkaTestConsumer kafkaTestConsumer = new KafkaTestConsumer();
         kafkaTestConsumer.consumeMessages(
                 Integer.parseInt(propertyParser.getProperty(ConfigVars.KAFKA_TEST_MESSAGE_COUNT_KEY)),
-                propertyParser.getProperty(ConfigVars.KAFKA_TEST_TOPIC_KEY),
+                propertyParser.getProperty(ConfigVars.KAFKA_TOPIC_KEY),
                 0,
                 seeds,
                 kafkaLocalBroker.getKafkaPort());
