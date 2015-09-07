@@ -3,7 +3,7 @@
 
     <groupId>com.github.sakserv</groupId>
     <artifactId>kafka-readfile-producer</artifactId>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>0.0.3</version>
     <packaging>jar</packaging>
 
     <name>Kafka Readfile Producer</name>
@@ -22,7 +22,7 @@
         <connection>scm:git:git://github.com/sakserv/kafka-readfile-producer.git</connection>
         <developerConnection>scm:git:git@github.com:sakserv/kafka-readfile-producer.git</developerConnection>
         <url>http://github.com/sakserv/kafka-readfile-producer</url>
-        <tag>HEAD</tag>
+        <tag>kafka-readfile-producer-0.0.3</tag>
     </scm>
 
     <developers>
