@@ -91,27 +91,27 @@ public class KafkaReadfileProducer {
     }
 
     public void produceMessages() {
+
+        // Setup the Kafka Producer
         Properties props = new Properties();
         props.put("metadata.broker.list", getKafkaHostname() + ":" + getKafkaPort());
         props.put("serializer.class", "kafka.serializer.StringEncoder");
         ProducerConfig config = new ProducerConfig(props);
         Producer<String, String> producer = new Producer<String, String>(config);
 
+        // Read each line from the file and send via the producer
         try(BufferedReader br = new BufferedReader(new FileReader(getInputFileName()))) {
             String line = br.readLine();
             while (line != null) {
                 KeyedMessage<String, String> data = new KeyedMessage<String, String>(getTopic(), null, line);
                 producer.send(data);
                 System.out.println(line);
-                Thread.sleep(100l);
+                //Thread.sleep(200l);
                 line = br.readLine();
             }
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (InterruptedException e) {}
-        finally {
-            producer.close();
-        }
+        } //catch (InterruptedException e) {}
 
     }
 }

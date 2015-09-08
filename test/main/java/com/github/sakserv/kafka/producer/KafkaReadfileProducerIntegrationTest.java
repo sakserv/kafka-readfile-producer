@@ -54,6 +54,8 @@ public class KafkaReadfileProducerIntegrationTest {
 
     @BeforeClass
     public static void setUp() throws Exception {
+
+        // Start a Zookeeper mini cluster
         zookeeperLocalCluster = new ZookeeperLocalCluster.Builder()
                 .setPort(Integer.parseInt(propertyParser.getProperty(ConfigVars.ZOOKEEPER_PORT_KEY)))
                 .setTempDir(propertyParser.getProperty(ConfigVars.ZOOKEEPER_TEMP_DIR_KEY))
@@ -61,6 +63,7 @@ public class KafkaReadfileProducerIntegrationTest {
                 .build();
         zookeeperLocalCluster.start();
 
+        // Start a kafka mini cluster, leveraging the Zookeeper mini cluster
         kafkaLocalBroker = new KafkaLocalBroker.Builder()
                 .setKafkaHostname(propertyParser.getProperty(ConfigVars.KAFKA_HOSTNAME_KEY))
                 .setKafkaPort(Integer.parseInt(propertyParser.getProperty(ConfigVars.KAFKA_PORT_KEY)))
@@ -76,14 +79,16 @@ public class KafkaReadfileProducerIntegrationTest {
     @AfterClass
     public static void tearDown() throws Exception {
 
+        // Stop the kafka and zookeeper mini clusters
         kafkaLocalBroker.stop();
         zookeeperLocalCluster.stop();
+
     }
 
     @Test
     public void testKafkaReadfileProducer() throws Exception {
 
-        // Producer
+        // Setup the Kafka Producer
         KafkaReadfileProducer kafkaReadfileProducer = new KafkaReadfileProducer.Builder()
                 .setKafkaHostname(propertyParser.getProperty(ConfigVars.KAFKA_HOSTNAME_KEY))
                 .setKafkaPort(Integer.parseInt(propertyParser.getProperty(ConfigVars.KAFKA_PORT_KEY)))
@@ -91,9 +96,10 @@ public class KafkaReadfileProducerIntegrationTest {
                 .setInputFileName(inputFile)
                 .build();
 
+        // Send the test messages to the Kafka mini cluster
         kafkaReadfileProducer.produceMessages();
 
-        // Consumer
+        // Configure a test Kafka consumer and consume all the messages sent by the Kafka Producer
         List<String> seeds = new ArrayList<String>();
         seeds.add(kafkaLocalBroker.getKafkaHostname());
         KafkaTestConsumer kafkaTestConsumer = new KafkaTestConsumer();
