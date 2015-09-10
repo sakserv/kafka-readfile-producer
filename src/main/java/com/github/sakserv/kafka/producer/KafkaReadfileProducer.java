@@ -94,7 +94,7 @@ public class KafkaReadfileProducer {
 
         // Setup the Kafka Producer
         Properties props = new Properties();
-        props.put("metadata.broker.list", getKafkaHostname() + ":" + getKafkaPort());
+        props.put("metadata.broker.list", getKafkaHostname() + ":" + getKafkaHostname());
         props.put("serializer.class", "kafka.serializer.StringEncoder");
         ProducerConfig config = new ProducerConfig(props);
         Producer<String, String> producer = new Producer<String, String>(config);
