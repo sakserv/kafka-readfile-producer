@@ -88,7 +88,7 @@ public class KafkaReadfileProducerIntegrationTest {
     @Test
     public void testKafkaReadfileProducer() throws Exception {
 
-        // Setup the Kafka Producer
+        // Setup the Kafka Readfile Producer
         KafkaReadfileProducer kafkaReadfileProducer = new KafkaReadfileProducer.Builder()
                 .setKafkaHostname(propertyParser.getProperty(ConfigVars.KAFKA_HOSTNAME_KEY))
                 .setKafkaPort(Integer.parseInt(propertyParser.getProperty(ConfigVars.KAFKA_PORT_KEY)))
