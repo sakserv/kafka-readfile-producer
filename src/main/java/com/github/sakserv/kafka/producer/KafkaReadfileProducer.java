@@ -106,12 +106,12 @@ public class KafkaReadfileProducer {
                 KeyedMessage<String, String> data = new KeyedMessage<String, String>(getTopic(), null, line);
                 producer.send(data);
                 System.out.println(line);
-                Thread.sleep(200l);
+                //Thread.sleep(200l);
                 line = br.readLine();
             }
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (InterruptedException e) {}
+        } //catch (InterruptedException e) {}
 
     }
 }
